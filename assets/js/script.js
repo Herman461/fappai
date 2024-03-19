@@ -393,6 +393,24 @@ document.addEventListener('DOMContentLoaded', function() {
 const tabLinks = document.querySelectorAll("[data-tab-title]");
 const tabContent = document.querySelectorAll("[data-tab-content]");
 
+function lockBody() {
+	const scrollWidth = window.innerWidth - document.body.clientWidth
+
+	document.body.style.paddingRight = scrollWidth + 'px'
+
+	document.body.classList.toggle('lock')
+	document.documentElement.classList.toggle('lock')
+
+	const elements = document.querySelectorAll('.lock-body')
+
+	if (elements.length > 0) {
+		for (let index = 0; index < elements.length; index++) {
+			const element = elements[index]
+			element.style.paddingRight = scrollWidth + 'px'
+		}
+	}
+
+}
 
 if (tabContent.length > 0)  {
 	tabLinks.forEach(function(el) {
@@ -400,48 +418,110 @@ if (tabContent.length > 0)  {
 	});
 
 }
-// Модальные окна
+
+// function closeActionsList(e) {
+//
+// 	if (!e.target.closest('.actions-video.active') || e.target.closest('.actions-video__item')) {
+// 		document.querySelector('.actions-video.active').classList.remove('active')
+// 		window.removeEventListener('click', closeActionsList)
+// 	}
+// }
+let activeActionsList = null
+
+function toggleVideoActionsList(e) {
+	if (activeActionsList && e.target.closest('.actions-video__button.active')) {
+		activeActionsList.classList.remove('active')
+		activeActionsList.querySelector('.actions-video__button').classList.remove('active')
+
+		activeActionsList = null
+		return
+	}
+
+	if (activeActionsList && e.target.closest('.actions-video__button') && !e.target.closest('.actions-video__button').classList.contains('active')) {
+		activeActionsList.classList.remove('active')
+		activeActionsList.querySelector('.actions-video__button').classList.remove('active')
+
+		activeActionsList = null
+	}
+
+	if (activeActionsList && (!e.target.closest('.actions-video.active') || e.target.closest('.actions-video__item'))) {
+		activeActionsList.classList.remove('active')
+		activeActionsList.querySelector('.actions-video__button').classList.remove('active')
+
+		activeActionsList = null
+		return
+	}
+
+
+
+
+	if (e.target.closest('.actions-video__button') && !e.target.closest('.actions-video').classList.contains('active')) {
+		e.target.closest('.actions-video').classList.add('active')
+		e.target.closest('.actions-video__button').classList.add('active')
+		activeActionsList = e.target.closest('.actions-video')
+	}
+}
 window.addEventListener('click', function(e) {
 	if (e.target.closest('[data-modal-link]')) {
 		const link = e.target.closest('[data-modal-link]')
 		e.preventDefault()
-		const scrollWidth = window.innerWidth - document.body.clientWidth
+
 
 		const modalTitle = '#' + link.dataset.modalLink
 
+		let missLock = false
+
+		if (document.querySelector('.modal.active')) {
+			document.querySelector('.modal.active').classList.remove('active')
+			missLock = true
+		}
+
 		document.querySelector(modalTitle).classList.add('active')
 
-		document.body.classList.add('lock')
 
-		document.body.style.paddingRight = scrollWidth + 'px'
+		if (!missLock) {
+			lockBody()
+		}
 	}
 
 	if (e.target.closest('[data-modal-close]')) {
 		e.preventDefault()
 		const closeButton = e.target.closest('[data-modal-close]')
-		closeButton.closest('.modal').classList.remove('active')
-		if (closeButton.closest('.modal').querySelector('video')) {
-			closeButton.closest('.modal').querySelector('video').pause()
-			closeButton.closest('.modal').querySelector('video').currentTime = 0
-		}
-		closeButton.closest('.modal').classList.remove('active')
-		document.body.classList.remove('lock')
-		setTimeout(() => {
 
-			document.body.style.paddingRight = 0
+
+
+		closeButton.closest('.modal').classList.remove('active')
+
+		setTimeout(function() {
+			lockBody()
 		}, 300)
+
 	}
 
 	if (e.target.closest('.modal')) {
 		if (!e.target.closest('.modal__content')) {
 			e.target.closest('.modal').classList.remove('active')
 
-			setTimeout(() => {
-				document.body.classList.remove('lock')
-				document.body.style.paddingRight = 0
-			}, 400)
+			setTimeout(function() {
+				lockBody()
+			}, 300)
 		}
 	}
+
+
+	toggleVideoActionsList(e)
+
+	// if (e.target.closest('.actions-video__button') && e.target.closest('.actions-video').classList.contains('active')) {
+	//
+	// 	// document.querySelector('.actions-video.active').classList.remove('active')
+	// 	window.removeEventListener('click', closeActionsList, {capture: true})
+	// 	return
+	// }
+	// if (e.target.closest('.actions-video__button') && !e.target.closest('.actions-video').classList.contains('active')) {
+	//
+	// 	e.target.closest('.actions-video').classList.add('active')
+	// 	window.addEventListener('click', closeActionsList, {capture: true})
+	// }
 })
 
 function openTabs(el) {

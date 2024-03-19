@@ -30,23 +30,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    function lockBody() {
-        const scrollWidth = window.innerWidth - document.body.clientWidth
 
-        document.body.style.paddingRight = scrollWidth + 'px'
-
-        document.body.classList.toggle('lock')
-
-        const elements = document.querySelectorAll('.lock-body')
-
-        if (elements.length > 0) {
-            for (let index = 0; index < elements.length; index++) {
-                const element = elements[index]
-                element.style.paddingRight = scrollWidth + 'px'
-            }
-        }
-
-    }
 
     const searchHeaderInput = document.querySelector('.search-header__input input')
     const emptySearchBlock = document.querySelector('.search-header__empty')
@@ -99,6 +83,17 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    window.addEventListener('click', function(e) {
+        if (e.target.closest('.info-video__more')) {
+            e.target.closest('.info-video__text').classList.add('full')
+        }
+        if (e.target.closest('.info-video__less')) {
+            e.target.closest('.info-video__text').classList.remove('full')
+        }
+        if (e.target.closest('.tag__more')) {
+            e.target.closest('.tags').classList.toggle('full')
+        }
+    })
     //
     //
     // fixHeader()
