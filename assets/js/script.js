@@ -552,6 +552,229 @@ function openTabs(el) {
 
 }
 
+// Select
+const select = document.querySelectorAll('.base-select')
+let activeSelect
+if (select.length > 0) {
+	for (let index = 0; index < select.length; ++index) {
+		const item = select[index]
+
+		const selectOption = item.querySelectorAll('option')
+
+		const selectOptionLength = selectOption.length
+
+		let selectedOption = item.querySelector('option[selected]')
+
+		if (!selectedOption) {
+			selectedOption = item.querySelector('option')
+		}
 
 
 
+		const baseHeadText = item.dataset.head
+		const duration = 400
+
+		item.querySelector('select').hidden = true
+
+		const head = document.createElement('div')
+		const text = document.createElement('span')
+
+		head.classList.add('base-select__head')
+
+		text.textContent = baseHeadText ? baseHeadText : selectedOption.textContent
+
+		head.append(text)
+		item.append(head)
+
+		// Добавление иконки
+		const icon = item.querySelector('.base-select__icon')
+
+		if (icon) {
+			head.append(icon)
+		}
+
+		// Создание списка
+		const selectList = document.createElement('ul')
+		selectList.classList.add('base-select__list')
+
+		item.append(selectList)
+
+		// if (!disabledOption) {
+		// 	const newOption = document.createElement('li')
+		// 	newOption.textContent = selectedOption ? selectedOption.textContent : selectOption[0].textContent
+		// 	newOption.classList.add('base-select__item')
+		// 	newOption.dataset.value = selectedOption ? selectedOption.value : selectOption[0].textContent
+		// 	selectList.append(newOption)
+		// }
+		for (let index = 0; index < selectOptionLength; index++) {
+			const newOption = document.createElement('li')
+			newOption.textContent = selectOption[index].textContent
+			newOption.classList.add('base-select__item')
+			newOption.dataset.value = selectOption[index].value
+			selectList.append(newOption)
+
+			if (selectOption[index].hasAttribute('selected')) {
+				newOption.classList.add('active')
+			}
+		}
+
+		selectList.hidden = true
+		head.addEventListener('click', function(e) {
+			if (e.target.closest('.base-select_h')) return;
+			if (!document.querySelector('.base-select__list.slide') && e.target.closest('.base-select__head')) {
+				if (activeSelect && !e.target.closest('.base-select__head').nextElementSibling.isEqualNode(activeSelect)) {
+					slideUp(activeSelect)
+					activeSelect.closest('.base-select').querySelector('.base-select__head').classList.remove('active')
+
+
+				}
+				activeSelect = e.target.closest('.base-select__head').nextElementSibling
+				e.currentTarget.classList.toggle('active')
+				slideToggle(selectList)
+			}
+		})
+		selectList.addEventListener('click', function(e) {
+			if (e.target.closest('.base-select__item')) {
+				const target = e.target.closest('.base-select__item')
+
+				const value = target.dataset.value
+				let newSelectedEl = item.querySelector(`option[value="${value}"]`)
+				const oldSelectedEl = item.querySelector('option[selected]')
+				if (!newSelectedEl) {
+					for (let index = 1; index < selectOptionLength; index++) {
+						const option = selectOption[index]
+						if (option.textContent === value) {
+							newSelectedEl = option
+						}
+					}
+				}
+
+				if (oldSelectedEl) {
+					oldSelectedEl.removeAttribute('selected')
+				}
+				if (newSelectedEl) {
+					newSelectedEl.setAttribute('selected', 'selected')
+					text.textContent = newSelectedEl.textContent
+				}
+				head.classList.remove('active')
+				activeSelect = null
+
+				if (document.querySelector('.base-select__item.active')) {
+					document.querySelector('.base-select__item.active').classList.remove('active')
+				}
+
+
+				target.classList.add('active')
+				e.target.closest('.base-select').querySelector('select').dispatchEvent(new Event('change'))
+
+				if (e.target.closest('.base-select_h')) {
+					slideUp(e.target.closest('.base-select__wrapper'))
+				} else {
+					slideUp(selectList)
+				}
+
+			}
+		})
+	}
+}
+
+
+
+
+function copyText(el) {
+	if (el) {
+		let tempInput = document.createElement('textarea');
+
+		tempInput.style.fontSize = '12pt';
+		tempInput.style.border = '0';
+		tempInput.style.padding = '0';
+		tempInput.style.margin = '0';
+		tempInput.style.position = 'absolute';
+		tempInput.style.left = '-9999px';
+		tempInput.setAttribute('readonly', '');
+
+		tempInput.value = el.textContent
+
+		el.parentNode.appendChild(tempInput);
+
+		tempInput.select();
+		tempInput.setSelectionRange(0, 99999);
+
+		document.execCommand('copy');
+
+		tempInput.parentNode.removeChild(tempInput);
+	}
+}
+
+function setErrorAlert(text) {
+	const error = document.createElement('div')
+	error.className = 'alert alert_error'
+	error.textContent = text
+
+	const currentAlerts = document.querySelectorAll('.alert')
+
+	const currentAlertsLength = currentAlerts.length
+
+	if (currentAlertsLength === 0) {
+		error.style.bottom = '10px'
+	} else {
+		const errorOffset = 10
+
+		error.style.bottom = (10 + (currentAlertsLength * currentAlerts[0].offsetHeight) + (errorOffset * currentAlertsLength ) ) + 'px'
+	}
+	document.body.appendChild(error)
+
+	setTimeout(function() {
+		error.remove()
+	}, 2000)
+}
+
+function setSuccessAlert(text) {
+	const alert = document.createElement('div')
+	alert.className = 'alert alert_success'
+	alert.textContent = text
+
+	const currentAlerts = document.querySelectorAll('.alert')
+
+	const currentAlertsLength = currentAlerts.length
+
+	if (currentAlertsLength === 0) {
+		alert.style.bottom = '10px'
+	} else {
+		const errorOffset = 10
+
+		alert.style.bottom = (10 + (currentAlertsLength * currentAlerts[0].offsetHeight) + (errorOffset * currentAlertsLength ) ) + 'px'
+	}
+	document.body.appendChild(alert)
+
+	setTimeout(function() {
+		alert.remove()
+	}, 2000)
+}
+
+function debounce(func, wait, immediate) {
+
+	let timeout;
+
+	return function() {
+
+		let context = this,
+			args = arguments;
+
+		let callNow = immediate && !timeout;
+
+		clearTimeout(timeout);
+
+		timeout = setTimeout(function() {
+
+			timeout = null;
+
+			if (!immediate) {
+
+				func.apply(context, args);
+			}
+		}, wait);
+
+		if (callNow) func.apply(context, args);
+	}
+}
