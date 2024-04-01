@@ -1,0 +1,452 @@
+.edit {
+  max-width: 700px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+  padding-top: 24px;
+}
+
+.content-edit__item {
+  margin-bottom: 12px;
+}
+
+.content-edit__label {
+  color: #CFD2D2;
+  margin-bottom: 4px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.content-edit__label_grey {
+  color: #9097A8;
+}
+
+.content-edit__input textarea {
+  padding: 8px !important;
+  min-height: 106px;
+  height: auto !important;
+}
+
+.content-edit__input .input {
+  border-color: #535F7C !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  height: 34px !important;
+}
+
+.content-edit__input .input[disabled] {
+  border: 1px solid #283838 !important;
+  background: #1E2D2D !important;
+  color: #8C9292;
+}
+
+.content-edit__input .input.has-error {
+  border-color: #FF7575 !important;
+}
+
+.content-edit__input .input::-webkit-input-placeholder {
+  color: #535F7C;
+}
+
+.content-edit__input .input::-moz-placeholder {
+  color: #535F7C;
+}
+
+.content-edit__input .input:-ms-input-placeholder {
+  color: #535F7C;
+}
+
+.content-edit__input .input::-ms-input-placeholder {
+  color: #535F7C;
+}
+
+.content-edit__input .input::placeholder {
+  color: #535F7C;
+}
+
+.content-edit__input .input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.content-edit__input .input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.content-edit__input .input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.content-edit__input .input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.content-edit__input .input:focus::placeholder {
+  color: transparent;
+}
+
+.content-edit__remark {
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-top: 4px;
+  color: #CFD2D2;
+}
+
+.content-edit__text {
+  margin-bottom: 24px;
+}
+
+.photo-edit input {
+  display: none;
+}
+
+.photo-edit__item {
+  border-radius: 8px;
+  border: 1px solid #9097A8;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.photo-edit__item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100%;
+}
+
+.photo-edit__action {
+  cursor: pointer;
+  margin-top: 12px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 15px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.photo-edit__action:last-child {
+  margin-bottom: 0;
+}
+
+.photo-edit__action svg {
+  color: #10E7C1;
+  width: 15px;
+  height: 15px;
+  margin-right: 6px;
+}
+
+.list {
+  padding-left: 8px;
+}
+
+.list li {
+  position: relative;
+  padding-left: 8px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #CFD2D2;
+}
+
+.list li:last-child {
+  margin: 0;
+}
+
+.list li::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.options-edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.options-edit__column {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 50%;
+  flex: 0 1 50%;
+  margin-bottom: 8px;
+}
+
+.options-edit__checkbox .checkbox__text:before {
+  width: 20px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 20px;
+  flex: 0 0 20px;
+  border-radius: 4px;
+  height: 20px;
+  background: #000;
+}
+
+.options-edit__checkbox .checkbox__text:after {
+  width: 20px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 20px;
+  flex: 0 0 20px;
+  border-radius: 4px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background: #10E7C1;
+}
+
+.bottom-edit__delete {
+  min-height: 32px;
+}
+
+.bottom-edit__cancel {
+  min-height: 32px;
+  margin-right: 12px;
+  min-width: 124px;
+}
+
+.bottom-edit__save {
+  min-height: 32px;
+  min-width: 124px;
+}
+
+.errors-list li {
+  color: #C12E2E;
+}
+
+.errors-list li::before {
+  background: #C12E2E;
+}
+
+.account-modal__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.account-modal__icon svg {
+  width: 48px;
+  height: 48px;
+  fill: #FF7575;
+}
+
+.account-modal__title {
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.account-modal__item {
+  margin-bottom: 24px;
+}
+
+.account-modal__label {
+  margin-bottom: 4px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #CFCFCF;
+}
+
+.account-modal__input .input {
+  border-color: #535F7C !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  height: 34px !important;
+}
+
+.account-modal__input .input::-webkit-input-placeholder {
+  color: #535F7C;
+}
+
+.account-modal__input .input::-moz-placeholder {
+  color: #535F7C;
+}
+
+.account-modal__input .input:-ms-input-placeholder {
+  color: #535F7C;
+}
+
+.account-modal__input .input::-ms-input-placeholder {
+  color: #535F7C;
+}
+
+.account-modal__input .input::placeholder {
+  color: #535F7C;
+}
+
+.account-modal__input .input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.account-modal__input .input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.account-modal__input .input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.account-modal__input .input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.account-modal__input .input:focus::placeholder {
+  color: transparent;
+}
+
+.account-modal__button {
+  min-height: 40px;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.account-modal__cancel {
+  min-height: 40px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+@media (min-width: 480.98px) {
+  .bottom-edit {
+    margin-top: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .bottom-edit__delete {
+    min-width: 110px;
+    margin-right: 20px;
+  }
+
+  .bottom-edit__block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .bottom-edit__block_big {
+    width: 100%;
+  }
+
+  .bottom-edit__block_big .bottom-edit__cancel,
+  .bottom-edit__block_big .bottom-edit__save {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+  }
+
+  .bottom-edit__block_big .bottom-edit__cancel {
+    margin-right: 6px;
+  }
+
+  .bottom-edit__block_big .bottom-edit__save {
+    margin-left: 6px;
+  }
+}
+
+@media (min-width: 767.98px) {
+  .content-edit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .content-edit__photo {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 250px;
+    flex: 0 0 250px;
+    margin-right: 32px;
+  }
+
+  .content-edit__body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .content-edit__photo {
+    max-width: 250px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .photo-edit__item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520.98px) {
+  .edit__buttons {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480.98px) {
+  .bottom-edit__delete {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .bottom-edit__cancel {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .bottom-edit__save {
+    width: 100%;
+  }
+}
+
+@media (any-hover: hover) {
+  .photo-edit__action:hover {
+    color: #10E7C1;
+  }
+}
