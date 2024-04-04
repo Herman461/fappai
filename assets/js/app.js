@@ -189,7 +189,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
         if (gridButton) {
             gridButton.addEventListener('click', function(e) {
-                const items = document.querySelectorAll('.feed__items')
+                const items = document.querySelectorAll('.feed-items')
 
                 if (items.length > 0) {
                     for (let index = 0; index < items.length; index++) {
@@ -208,7 +208,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
         if (listButton) {
             listButton.addEventListener('click', function(e) {
-                const items = document.querySelectorAll('.feed__items')
+                const items = document.querySelectorAll('.feed-items')
 
                 if (items.length > 0) {
                     for (let index = 0; index < items.length; index++) {

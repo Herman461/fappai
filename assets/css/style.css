@@ -390,6 +390,27 @@ textarea.input::placeholder {
   transition: all 0.3s ease 0s;
 }
 
+.select-feed {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 100px;
+}
+
+.select-feed__label {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-right: 4px;
+  color: #9097A8;
+}
+
 .base-select {
   display: block;
   width: 100%;
@@ -1877,6 +1898,17 @@ textarea.input::placeholder {
   padding: 2px 10px;
 }
 
+.buttons__item svg {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 20px;
+  flex: 0 0 20px;
+}
+
 .buttons__item::before {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -1997,9 +2029,17 @@ html.lock {
 
 .base-loader__item {
   margin-right: 8px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 30px;
+  flex: 0 0 30px;
+  height: 30px;
+  width: 30px;
+  margin-top: 3px;
 }
 
 .base-loader__item svg {
+  width: 24px;
+  height: 24px;
   -webkit-animation: 1s ease-in-out 0s infinite normal base-loader;
   animation: 1s ease-in-out 0s infinite normal base-loader;
 }
@@ -2889,6 +2929,115 @@ html.lock {
   font-size: 12px;
 }
 
+.niches-item {
+  padding: 15px 12px 12px 12px;
+  background: #111111;
+  border-radius: 6px;
+}
+
+.niches-item__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.niches-item__avatar {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 28px;
+  flex: 0 0 28px;
+  margin-right: 8px;
+}
+
+.niches-item__avatar img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.niches-item__info {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding-right: 10px;
+}
+
+.niches-item__button {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.niches-item__photos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -4px;
+}
+
+.niches-item__photo {
+  padding: 0 4px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 33.333%;
+  flex: 0 1 33.333%;
+}
+
+.niches-item__photo img {
+  border-radius: 6px;
+  height: 90px;
+  width: 100%;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.view-feed {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.view-feed__item:first-child {
+  margin-right: 8px;
+}
+
+.view-feed__item svg {
+  width: 20px;
+  height: 20px;
+  color: #9097A8;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+.view-feed__item.active {
+  cursor: default;
+}
+
+.view-feed__item.active svg {
+  color: #fff;
+}
+
+.feed-items.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
 @media (min-width: 767.98px) {
   .menu__body {
     padding-top: 24px;
@@ -2940,6 +3089,10 @@ html.lock {
   }
 
   .menu__column:last-child::before {
+    display: none;
+  }
+
+  .page__horizontal-banner_mobile {
     display: none;
   }
 
@@ -3078,6 +3231,14 @@ html.lock {
 
   .page__banner {
     display: none;
+  }
+
+  .buttons__item svg {
+    width: 15px;
+    height: 15px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 15px;
+    flex: 0 0 15px;
   }
 
   .actions-video__body {
@@ -3318,6 +3479,12 @@ html.lock {
   }
 }
 
+@media (max-width: 480.98px) {
+  .select-feed {
+    min-width: 80px;
+  }
+}
+
 @media (min-width: 767.98px) and (max-width: 991.98px) {
   .bottom-header__item svg {
     margin-right: 8px;
@@ -3489,6 +3656,10 @@ html.lock {
     color: #fff;
   }
 
+  .buttons__item:hover svg {
+    color: #fff;
+  }
+
   .item-base-creators__body:hover .item-base-creators__ava img {
     -webkit-transform: scale(1.15);
     transform: scale(1.15);
@@ -3554,5 +3725,13 @@ html.lock {
   .image__action:hover::before {
     opacity: 1;
     visibility: visible;
+  }
+
+  .view-feed__item:hover svg {
+    color: #10E7C1;
+  }
+
+  .view-feed__item.active:hover svg {
+    color: #fff !important;
   }
 }

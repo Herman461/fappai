@@ -272,19 +272,6 @@
   align-items: center;
 }
 
-.top-feed__select {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 100px;
-}
-
 .top-feed__categories {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -360,41 +347,6 @@
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-}
-
-.select-feed__label {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  margin-right: 4px;
-  color: #9097A8;
-}
-
-.view-feed {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.view-feed__item:first-child {
-  margin-right: 8px;
-}
-
-.view-feed__item svg {
-  width: 20px;
-  height: 20px;
-  color: #9097A8;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-}
-
-.view-feed__item.active {
-  cursor: default;
-}
-
-.view-feed__item.active svg {
-  color: #fff;
 }
 
 .page {
@@ -498,10 +450,6 @@
 }
 
 @media (max-width: 480.98px) {
-  .top-feed__select {
-    min-width: 80px;
-  }
-
   .top-feed__categories {
     margin: 0 15px 0 5px;
   }
@@ -535,13 +483,5 @@
 
   .top-feed__category:hover {
     color: #fff;
-  }
-
-  .view-feed__item:hover svg {
-    color: #10E7C1;
-  }
-
-  .view-feed__item.active:hover svg {
-    color: #fff !important;
   }
 }
