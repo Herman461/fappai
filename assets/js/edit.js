@@ -11,14 +11,23 @@ window.addEventListener('DOMContentLoaded', function () {
         const hasValidInputs = document.querySelectorAll('.content-edit__input .input.has-no-error').length > 0
 
         if (password && password.classList.contains('has-no-error') && password.value !== confirmedPassword.value) {
-            button.setAttribute('disabled', '')
+            if (button) {
+                button.setAttribute('disabled', '')
+            }
+
             return
         }
 
         if (hasValidInputs && !document.querySelector('.content-edit .errors-list')) {
-            button.removeAttribute('disabled')
+            if (button) {
+                button.removeAttribute('disabled')
+            }
+
         } else {
-            button.setAttribute('disabled', '')
+            if (button) {
+                button.setAttribute('disabled', '')
+            }
+
         }
     }
     function setErrorList() {
@@ -38,7 +47,10 @@ window.addEventListener('DOMContentLoaded', function () {
                 item.textContent = error.text
                 errorsList.appendChild(item)
             }
-            photoWrapperElement.appendChild(errorsList)
+            if (photoWrapperElement) {
+                photoWrapperElement.appendChild(errorsList)
+            }
+
         }
         checkIfButtonIsDisabled()
     }
@@ -323,57 +335,62 @@ window.addEventListener('DOMContentLoaded', function () {
     // })
     const avatarInput = document.querySelector('.photo-edit__action input')
 
-    uploadButton.addEventListener('click', function() {
-        avatarInput.click()
-    })
+    if (uploadButton) {
+        uploadButton.addEventListener('click', function() {
+            avatarInput.click()
+        })
+    }
 
 
-    avatarInput.addEventListener('change', function (e) {
-        const avatar = e.currentTarget.files[0]
+    if (avatarInput) {
+        avatarInput.addEventListener('change', function (e) {
+            const avatar = e.currentTarget.files[0]
 
-        const avatarBody = avatarInput.closest('.avatar')
+            const avatarBody = avatarInput.closest('.avatar')
 
-        // if (avatar.size < 204800)
-        if (avatar.size < 204800) {
-            const errorMessageText = 'The image size cannot be less than 200 kb.'
-
-
-
-            setErrorAlert('The image size cannot be less than 200 kb.')
-            return
-        }
-
-        if (avatar.size > 52428800) {
+            // if (avatar.size < 204800)
+            if (avatar.size < 204800) {
+                const errorMessageText = 'The image size cannot be less than 200 kb.'
 
 
-            setErrorAlert('The image size cannot be more than 50 mb.')
-            return
-        }
 
-        const reader = new FileReader();
-        reader.readAsDataURL(avatar);
-
-
-        reader.onloadend = function () {
-
-
-            const img = document.createElement('img')
-
-            img.alt = 'User Photo'
-            img.src = reader.result
-
-            avatarWrapper.innerHTML = ''
-            avatarWrapper.appendChild(img)
-
-
-            if (button.hasAttribute('disabled')) {
-                button.removeAttribute('disabled')
+                setErrorAlert('The image size cannot be less than 200 kb.')
+                return
             }
 
-        }
+            if (avatar.size > 52428800) {
 
 
-    })
+                setErrorAlert('The image size cannot be more than 50 mb.')
+                return
+            }
+
+            const reader = new FileReader();
+            reader.readAsDataURL(avatar);
+
+
+            reader.onloadend = function () {
+
+
+                const img = document.createElement('img')
+
+                img.alt = 'User Photo'
+                img.src = reader.result
+
+                avatarWrapper.innerHTML = ''
+                avatarWrapper.appendChild(img)
+
+
+                if (button.hasAttribute('disabled')) {
+                    button.removeAttribute('disabled')
+                }
+
+            }
+
+
+        })
+
+    }
 
 
 

@@ -6,27 +6,31 @@ window.addEventListener('DOMContentLoaded', function() {
 
     const menu = document.querySelector('.header__menu')
     const header = document.querySelector('.header')
+    const profileMenu = document.querySelector('.profile-menu')
     let lock = false
     const burger = document.querySelector('.header__burger')
 
-    burger.addEventListener('click', function() {
+    if (burger) {
+        burger.addEventListener('click', function() {
 
-        if (lock) return
+            if (lock) return
 
-        lock = true
+            lock = true
 
-        toggleMenu()
+            toggleMenu()
 
-        setTimeout(() => {
-            lock = false
-        }, delay)
-    })
+            setTimeout(() => {
+                lock = false
+            }, delay)
+        })
 
-    function toggleMenu() {
-        burger.classList.toggle('active')
-        menu.classList.toggle('active')
-        header.classList.toggle('active')
-        lockBody()
+        function toggleMenu() {
+            burger.classList.toggle('active')
+            menu.classList.toggle('active')
+            header.classList.toggle('active')
+            lockBody()
+        }
+
     }
 
 
@@ -40,36 +44,42 @@ window.addEventListener('DOMContentLoaded', function() {
     const cancelSearchHeader = document.querySelector('.search-header__cancel')
     const searchHeader = document.querySelector('.header__search')
 
-    menu.addEventListener('click', function(e) {
-        if (!e.target.closest('.menu__body')) {
-            toggleMenu()
-        }
-    })
-    searchHeaderInput.addEventListener('focus', function(e) {
-        if (menu.classList.contains('active')) {
-            toggleMenu()
-        }
-        searchHeader.classList.add('active')
-        lockBody()
-    })
+    if (menu) {
+        menu.addEventListener('click', function(e) {
+            if (!e.target.closest('.menu__body')) {
+                toggleMenu()
+            }
+        })
+    }
 
-    clearSearchHeader.addEventListener('click', function() {
-        searchHeaderInput.value = ''
-        searchHeaderInput.focus()
-        checkSearchInputValue()
-    })
+    if (searchHeaderInput) {
+        searchHeaderInput.addEventListener('focus', function(e) {
+            if (menu.classList.contains('active')) {
+                toggleMenu()
+            }
+            searchHeader.classList.add('active')
+            lockBody()
+        })
+
+        clearSearchHeader.addEventListener('click', function() {
+            searchHeaderInput.value = ''
+            searchHeaderInput.focus()
+            checkSearchInputValue()
+        })
 
 
-    searchHeaderInput.addEventListener('input', checkSearchInputValue)
+        searchHeaderInput.addEventListener('input', checkSearchInputValue)
 
-    buttonSearchHeader.addEventListener('click', function() {
-        searchHeaderInput.focus()
-    })
+        buttonSearchHeader.addEventListener('click', function() {
+            searchHeaderInput.focus()
+        })
 
-    cancelSearchHeader.addEventListener('click', function() {
-        searchHeader.classList.remove('active')
-        lockBody()
-    })
+        cancelSearchHeader.addEventListener('click', function() {
+            searchHeader.classList.remove('active')
+            lockBody()
+        })
+    }
+
 
     function checkSearchInputValue() {
         if (searchHeaderInput.value.length === 0 && emptySearchBlock.classList.contains('hidden')) {
@@ -81,6 +91,20 @@ window.addEventListener('DOMContentLoaded', function() {
             emptySearchBlock.classList.add('hidden')
             contentSearchBlock.classList.add('show')
         }
+    }
+
+    if (header && profileMenu) {
+        header.addEventListener('click', function(e) {
+            if (profileMenu.classList.contains('active') && (!e.target.closest('.profile-menu__body') && !e.target.closest('.header__user') && !e.target.closest('.bottom-header__item_user'))) {
+                profileMenu.classList.remove('active')
+                e.preventDefault()
+            }
+            if (e.target.closest('.header__user') || e.target.closest('.bottom-header__item_user')) {
+                profileMenu.classList.toggle('active')
+                e.preventDefault()
+
+            }
+        })
     }
 
     window.addEventListener('click', function(e) {
