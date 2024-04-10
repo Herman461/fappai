@@ -256,107 +256,8 @@
   margin-bottom: 4px;
 }
 
-.feed__top {
-  margin-bottom: 32px;
-}
-
-.top-feed {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.top-feed__categories {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  margin: 0 20px;
-}
-
-.top-feed__category {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 33.333%;
-  flex: 0 1 33.333%;
-  min-height: 22px;
-  font-size: 12px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #9097A8;
-  position: relative;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.top-feed__category::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: #9097A8;
-}
-
-.top-feed__category::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(62.82deg, #48F5C1 19%, #757AFF 85.74%);
-  opacity: 0;
-  visibility: hidden;
-}
-
-.top-feed__category.active {
-  color: #fff;
-}
-
-.top-feed__category.active::before {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.top-feed__category.active::after {
-  opacity: 1;
-  visibility: visible;
-}
-
-.top-feed__view {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .page {
   padding-bottom: 55px;
-}
-
-@media (min-width: 480.98px) {
-  .top-feed__categories {
-    max-width: 200px;
-  }
 }
 
 @media (min-width: 767.98px) {
@@ -449,12 +350,6 @@
   }
 }
 
-@media (max-width: 480.98px) {
-  .top-feed__categories {
-    margin: 0 15px 0 5px;
-  }
-}
-
 @media (any-hover: hover) {
   .main-user__edit:hover svg {
     color: #10E7C1;
@@ -479,9 +374,5 @@
 
   .copy-user__button:hover svg {
     color: #10E7C1;
-  }
-
-  .top-feed__category:hover {
-    color: #fff;
   }
 }

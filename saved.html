@@ -12,11 +12,12 @@
     <link rel="preload" as="font" href="assets/fonts/DINPro-CondensedBold.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="assets/fonts/DINPro-CondensedBold.woff" type="font/woff2" crossorigin="anonymous">
 
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css?_v=20240410034612" rel="stylesheet" />
 
     <link rel="stylesheet" href="assets/css/style.css?_v=20240410034612">
-    <link rel="stylesheet" href="assets/css/pages/categories.css?_v=20240410034612">
+    <link rel="stylesheet" href="assets/css/pages/saved.css?_v=20240410034612">
 
-    <title>Home</title>
+    <title>Saved</title>
 </head>
 
 <body>
@@ -1061,337 +1062,700 @@
 
 
         <main class="page">
-            <div class="page__container container">
-                <div class="page__banner page__banner_home">
-                    <img src="assets/images/banner.jpg" alt="">
-                </div>
-                <div class="page__body">
-                    <div class="page__buttons buttons">
-                        <a href="./videos.html" data-tab-category="feed" data-tab-title="recommendations" class="buttons__item stroke">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#category-play"></use>
-                            </svg>
-                            <span>Videos</span>
-                        </a>
-                        <a href="./images.html" data-tab-category="feed" data-tab-title="images" class="buttons__item stroke">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#category-image"></use>
-                            </svg>
-                            <span>Images</span>
-                        </a>
-                        <a href="./creators.html" data-tab-category="feed" data-tab-title="creators" class="buttons__item stroke">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#category-crown"></use>
-                            </svg>
-                            <span>Creators</span>
-                        </a>
-                        <a href="./niches.html" data-tab-category="feed" data-tab-title="niches" class="buttons__item stroke active">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#category-users"></use>
-                            </svg>
-                            <h1>Niches</h1>
-                        </a>
-                    </div>
-                    <div class="page__horizontal-banner page__horizontal-banner_mobile">
-                        <img src="assets/images/banner-horizontal.jpg" alt="">
-                    </div>
-                    <div class="categories">
-                        <div class="categories__top">
-                            <div class="categories__select select-feed">
-                                <div class="select-feed__label label">Sort by</div>
-                                <div class="select-feed__item base-select">
-                                    <select>
-                                        <option value="latest">Latest</option>
-                                        <option selected value="trending">Trending</option>
-                                        <option value="top">Top</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <button type="button" class="categories__button button">
-                                <svg>
-                                    <use xlink:href="assets/images/icons/icons.svg#plus"></use>
-                                </svg>
-                                <span class="button__body">
-                                    <span>Create</span>
-                                </span>
+            <div class="container">
 
-                            </button>
+                <div class="saved">
+                    <a href="" class="base-prev">
+                        <div class="base-prev__icon stroke">
+                            <svg>
+                                <use xlink:href="assets/images/icons/icons.svg#arrow-left"></use>
+                            </svg>
                         </div>
+                        <span>Go to back</span>
+                    </a>
+                    <div class="base-title">
+                        <div class="base-title__icon">
+                            <img src="assets/images/icons/star.svg" alt="">
+                        </div>
+                        <h1 class="base-title__item">Saved</h1>
+                    </div>
+                    <button data-modal-link="modal-create-collection" type="button" class="saved__button">
+                        <svg>
+                            <use xlink:href="assets/images/icons/icons.svg#plus"></use>
+                        </svg>
+                    </button>
+                    <div class="saved__items">
+                        <div class="saved__item item-saved">
+                            <div class="item-saved__body">
+                                <div class="item-saved__actions actions-item-saved">
+                                    <div class="actions-item-saved__button stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#dots"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="actions-item-saved__content">
+                                        <div data-modal-link="modal-edit-collection" class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#pencil"></use>
+                                            </svg>
+                                            <span>Edit collection</span>
+                                        </div>
+                                        <div class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#manage"></use>
+                                            </svg>
+                                            <span>Manage</span>
+                                        </div>
+                                        <div class="actions-item-saved__element actions-item-saved__element_red">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#trash"></use>
+                                            </svg>
+                                            <span>Delete collection</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-saved__image">
+                                    <img src="assets/images/collection.jpg" alt="">
+                                </div>
+                                <div class="item-saved__content">
+                                    <div class="item-saved__title">Collection name</div>
+                                    <div class="item-saved__text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem fugit minima nihil quibusdam, reprehenderit. A, debitis deserunt maiores perspiciatis recusandae sed sint soluta voluptates. Adipisci alias aut consectetur consequatur laborum modi pariatur placeat sint ullam voluptas! Accusamus architecto blanditiis exercitationem molestiae, mollitia pariatur quam quos. Asperiores eos maiores ullam?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="saved__item item-saved">
+                            <div class="item-saved__body">
+                                <div class="item-saved__actions actions-item-saved">
+                                    <div class="actions-item-saved__button stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#dots"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="actions-item-saved__content">
+                                        <div data-modal-link="modal-edit-collection" class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#pencil"></use>
+                                            </svg>
+                                            <span>Edit collection</span>
+                                        </div>
+                                        <div class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#manage"></use>
+                                            </svg>
+                                            <span>Manage</span>
+                                        </div>
+                                        <div class="actions-item-saved__element actions-item-saved__element_red">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#trash"></use>
+                                            </svg>
+                                            <span>Delete collection</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-saved__image">
+                                    <img src="assets/images/collection.jpg" alt="">
+                                </div>
+                                <div class="item-saved__content">
+                                    <div class="item-saved__title">Collection name</div>
+                                    <div class="item-saved__text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem fugit minima nihil quibusdam, reprehenderit. A, debitis deserunt maiores perspiciatis recusandae sed sint soluta voluptates. Adipisci alias aut consectetur consequatur laborum modi pariatur placeat sint ullam voluptas! Accusamus architecto blanditiis exercitationem molestiae, mollitia pariatur quam quos. Asperiores eos maiores ullam?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="saved__item item-saved">
+                            <div class="item-saved__body">
+                                <div class="item-saved__actions actions-item-saved">
+                                    <div class="actions-item-saved__button stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#dots"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="actions-item-saved__content">
+                                        <div data-modal-link="modal-edit-collection" class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#pencil"></use>
+                                            </svg>
+                                            <span>Edit collection</span>
+                                        </div>
+                                        <div class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#manage"></use>
+                                            </svg>
+                                            <span>Manage</span>
+                                        </div>
+                                        <div class="actions-item-saved__element actions-item-saved__element_red">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#trash"></use>
+                                            </svg>
+                                            <span>Delete collection</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-saved__image">
+                                    <img src="assets/images/collection.jpg" alt="">
+                                </div>
+                                <div class="item-saved__content">
+                                    <div class="item-saved__title">Collection name</div>
+                                    <div class="item-saved__text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem fugit minima nihil quibusdam, reprehenderit. A, debitis deserunt maiores perspiciatis recusandae sed sint soluta voluptates. Adipisci alias aut consectetur consequatur laborum modi pariatur placeat sint ullam voluptas! Accusamus architecto blanditiis exercitationem molestiae, mollitia pariatur quam quos. Asperiores eos maiores ullam?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="saved__item item-saved">
+                            <div class="item-saved__body">
+                                <div class="item-saved__actions actions-item-saved">
+                                    <div class="actions-item-saved__button stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#dots"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="actions-item-saved__content">
+                                        <div data-modal-link="modal-edit-collection" class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#pencil"></use>
+                                            </svg>
+                                            <span>Edit collection</span>
+                                        </div>
+                                        <div class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#manage"></use>
+                                            </svg>
+                                            <span>Manage</span>
+                                        </div>
+                                        <div class="actions-item-saved__element actions-item-saved__element_red">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#trash"></use>
+                                            </svg>
+                                            <span>Delete collection</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-saved__image">
+                                    <img src="assets/images/collection.jpg" alt="">
+                                </div>
+                                <div class="item-saved__content">
+                                    <div class="item-saved__title">Collection name</div>
+                                    <div class="item-saved__text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem fugit minima nihil quibusdam, reprehenderit. A, debitis deserunt maiores perspiciatis recusandae sed sint soluta voluptates. Adipisci alias aut consectetur consequatur laborum modi pariatur placeat sint ullam voluptas! Accusamus architecto blanditiis exercitationem molestiae, mollitia pariatur quam quos. Asperiores eos maiores ullam?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="saved__item item-saved">
+                            <div class="item-saved__body">
+                                <div class="item-saved__actions actions-item-saved">
+                                    <div class="actions-item-saved__button stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#dots"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="actions-item-saved__content">
+                                        <div data-modal-link="modal-edit-collection" class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#pencil"></use>
+                                            </svg>
+                                            <span>Edit collection</span>
+                                        </div>
+                                        <div class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#manage"></use>
+                                            </svg>
+                                            <span>Manage</span>
+                                        </div>
+                                        <div class="actions-item-saved__element actions-item-saved__element_red">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#trash"></use>
+                                            </svg>
+                                            <span>Delete collection</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-saved__image">
+                                    <img src="assets/images/collection.jpg" alt="">
+                                </div>
+                                <div class="item-saved__content">
+                                    <div class="item-saved__title">Collection name</div>
+                                    <div class="item-saved__text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem fugit minima nihil quibusdam, reprehenderit. A, debitis deserunt maiores perspiciatis recusandae sed sint soluta voluptates. Adipisci alias aut consectetur consequatur laborum modi pariatur placeat sint ullam voluptas! Accusamus architecto blanditiis exercitationem molestiae, mollitia pariatur quam quos. Asperiores eos maiores ullam?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="saved__item item-saved">
+                            <div class="item-saved__body">
+                                <div class="item-saved__actions actions-item-saved">
+                                    <div class="actions-item-saved__button stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#dots"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="actions-item-saved__content">
+                                        <div data-modal-link="modal-edit-collection" class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#pencil"></use>
+                                            </svg>
+                                            <span>Edit collection</span>
+                                        </div>
+                                        <div class="actions-item-saved__element">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#manage"></use>
+                                            </svg>
+                                            <span>Manage</span>
+                                        </div>
+                                        <div class="actions-item-saved__element actions-item-saved__element_red">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#trash"></use>
+                                            </svg>
+                                            <span>Delete collection</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-saved__image">
+                                    <img src="assets/images/collection.jpg" alt="">
+                                </div>
+                                <div class="item-saved__content">
+                                    <div class="item-saved__title">Collection name</div>
+                                    <div class="item-saved__text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis exercitationem fugit minima nihil quibusdam, reprehenderit. A, debitis deserunt maiores perspiciatis recusandae sed sint soluta voluptates. Adipisci alias aut consectetur consequatur laborum modi pariatur placeat sint ullam voluptas! Accusamus architecto blanditiis exercitationem molestiae, mollitia pariatur quam quos. Asperiores eos maiores ullam?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="categories__niches">
-                            <div class="categories__niche">
-                                <div class=" niches-item">
-                                    <div class="niches-item__top">
-                                        <div class="niches-item__avatar">
-                                            <img src="assets/images/tags/user.jpg" alt="">
+                </div>
+                <div class="feed">
+                    <div class="feed__top top-feed">
+                        <div class="top-feed__select select-feed">
+                            <div class="select-feed__label label">Sort by</div>
+                            <div class="select-feed__item base-select">
+                                <select>
+                                    <option value="latest">Latest</option>
+                                    <option selected value="trending">Trending</option>
+                                    <option value="top">Top</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="top-feed__categories">
+                            <button data-tab-category="feed" data-tab-title="all" type="button" class="top-feed__category active">All</button>
+                            <button data-tab-category="feed" data-tab-title="videos" type="button" class="top-feed__category">Videos</button>
+                            <button data-tab-category="feed" data-tab-title="photos" type="button" class="top-feed__category">Photo</button>
+                        </div>
+                        <div class="top-feed__view view-feed">
+                            <div class="view-feed__item view-feed__item_grid stroke active">
+                                <svg>
+                                    <use xlink:href="assets/images/icons/icons.svg#grid"></use>
+                                </svg>
+                            </div>
+                            <div class="view-feed__item view-feed__item_list stroke">
+                                <svg>
+                                    <use xlink:href="assets/images/icons/icons.svg#list"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-tab-category="feed" data-tab-content="all" class="feed__content active">
+                        <div class="feed__items feed-items">
+                            <div class="feed__item">
+
+                                <div class="item-video">
+
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-21" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/01.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
                                         </div>
-                                        <div class="niches-item__info">
-                                            <div class="niches-item__name">Sour Mojito</div>
-                                            <div class="niches-item__value value">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#group"></use>
-                                                </svg>
-                                                <span>130K</span>
-                                            </div>
-                                        </div>
-                                        <a href="" class="niches-item__button button">
-                                            <span class="button__body">
-                                                <span>Follow</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="niches-item__photos">
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/01_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/02_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/03_niches.jpg" alt="">
-                                        </div>
+                                        <div class="item-video__duration">12:24</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="categories__niche">
-                                <div class=" niches-item">
-                                    <div class="niches-item__top">
-                                        <div class="niches-item__avatar">
-                                            <img src="assets/images/tags/user.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__info">
-                                            <div class="niches-item__name">Sour Mojito</div>
-                                            <div class="niches-item__value value">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#group"></use>
-                                                </svg>
-                                                <span>130K</span>
-                                            </div>
-                                        </div>
-                                        <a href="" class="niches-item__button button">
-                                            <span class="button__body">
-                                                <span>Follow</span>
-                                            </span>
-                                        </a>
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
                                     </div>
-                                    <div class="niches-item__photos">
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/01_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/02_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/03_niches.jpg" alt="">
-                                        </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="categories__niche">
-                                <div class=" niches-item">
-                                    <div class="niches-item__top">
-                                        <div class="niches-item__avatar">
-                                            <img src="assets/images/tags/user.jpg" alt="">
+                            <div class="feed__item">
+
+                                <div class="item-video">
+
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-20" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/02.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
                                         </div>
-                                        <div class="niches-item__info">
-                                            <div class="niches-item__name">Sour Mojito</div>
-                                            <div class="niches-item__value value">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#group"></use>
-                                                </svg>
-                                                <span>130K</span>
-                                            </div>
-                                        </div>
-                                        <a href="" class="niches-item__button button">
-                                            <span class="button__body">
-                                                <span>Follow</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="niches-item__photos">
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/01_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/02_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/03_niches.jpg" alt="">
-                                        </div>
+                                        <div class="item-video__duration">12:24</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="categories__niche">
-                                <div class=" niches-item">
-                                    <div class="niches-item__top">
-                                        <div class="niches-item__avatar">
-                                            <img src="assets/images/tags/user.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__info">
-                                            <div class="niches-item__name">Sour Mojito</div>
-                                            <div class="niches-item__value value">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#group"></use>
-                                                </svg>
-                                                <span>130K</span>
-                                            </div>
-                                        </div>
-                                        <a href="" class="niches-item__button button">
-                                            <span class="button__body">
-                                                <span>Follow</span>
-                                            </span>
-                                        </a>
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
                                     </div>
-                                    <div class="niches-item__photos">
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/01_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/02_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/03_niches.jpg" alt="">
-                                        </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="categories__niche">
-                                <div class=" niches-item">
-                                    <div class="niches-item__top">
-                                        <div class="niches-item__avatar">
-                                            <img src="assets/images/tags/user.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__info">
-                                            <div class="niches-item__name">Sour Mojito</div>
-                                            <div class="niches-item__value value">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#group"></use>
-                                                </svg>
-                                                <span>130K</span>
-                                            </div>
-                                        </div>
-                                        <a href="" class="niches-item__button button">
-                                            <span class="button__body">
-                                                <span>Follow</span>
-                                            </span>
-                                        </a>
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
                                     </div>
-                                    <div class="niches-item__photos">
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/01_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/02_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/03_niches.jpg" alt="">
-                                        </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="categories__niche">
-                                <div class=" niches-item">
-                                    <div class="niches-item__top">
-                                        <div class="niches-item__avatar">
-                                            <img src="assets/images/tags/user.jpg" alt="">
+                            <div class="feed__item">
+
+                                <div class="item-video">
+
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-3" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/03.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
                                         </div>
-                                        <div class="niches-item__info">
-                                            <div class="niches-item__name">Sour Mojito</div>
-                                            <div class="niches-item__value value">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#group"></use>
-                                                </svg>
-                                                <span>130K</span>
-                                            </div>
-                                        </div>
-                                        <a href="" class="niches-item__button button">
-                                            <span class="button__body">
-                                                <span>Follow</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="niches-item__photos">
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/01_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/02_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/03_niches.jpg" alt="">
-                                        </div>
+                                        <div class="item-video__duration">12:24</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="categories__niche">
-                                <div class=" niches-item">
-                                    <div class="niches-item__top">
-                                        <div class="niches-item__avatar">
-                                            <img src="assets/images/tags/user.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__info">
-                                            <div class="niches-item__name">Sour Mojito</div>
-                                            <div class="niches-item__value value">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#group"></use>
-                                                </svg>
-                                                <span>130K</span>
-                                            </div>
-                                        </div>
-                                        <a href="" class="niches-item__button button">
-                                            <span class="button__body">
-                                                <span>Follow</span>
-                                            </span>
-                                        </a>
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
                                     </div>
-                                    <div class="niches-item__photos">
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/01_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/02_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/03_niches.jpg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="categories__niche">
-                                <div class=" niches-item">
-                                    <div class="niches-item__top">
-                                        <div class="niches-item__avatar">
-                                            <img src="assets/images/tags/user.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__info">
-                                            <div class="niches-item__name">Sour Mojito</div>
-                                            <div class="niches-item__value value">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#group"></use>
-                                                </svg>
-                                                <span>130K</span>
-                                            </div>
-                                        </div>
-                                        <a href="" class="niches-item__button button">
-                                            <span class="button__body">
-                                                <span>Follow</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="niches-item__photos">
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/01_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/02_niches.jpg" alt="">
-                                        </div>
-                                        <div class="niches-item__photo">
-                                            <img src="assets/images/tags/03_niches.jpg" alt="">
-                                        </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
                                     </div>
                                 </div>
                             </div>
 
+                            <div class="feed__item">
+
+                                <div class="item-video">
+
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-4" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/01.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
+                                        </div>
+                                        <div class="item-video__duration">12:24</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="base-loader">
+                            <div class="base-loader__item">
+                                <svg>
+                                    <use xlink:href="assets/images/icons/icons.svg#loader"></use>
+                                </svg>
+                            </div>
+                            <div class="base-loader__text">Loading...</div>
+                        </div>
+                    </div>
+                    <div data-tab-category="feed" data-tab-content="videos" class="feed__content">
+                        <div class="feed__items feed-items">
+                            <div class="feed__item">
+
+                                <div class="item-video">
+
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-10" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/02.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
+                                        </div>
+                                        <div class="item-video__duration">12:24</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+
+                                <div class="item-video">
+
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-11" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/03.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
+                                        </div>
+                                        <div class="item-video__duration">12:24</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+
+                                <div class="item-video">
+
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-12" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/01.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
+                                        </div>
+                                        <div class="item-video__duration">12:24</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+
+                                <div class="item-video">
+
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-13" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/02.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
+                                        </div>
+                                        <div class="item-video__duration">12:24</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+
+                                <div class="item-video">
+
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-14" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/03.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
+                                        </div>
+                                        <div class="item-video__duration">12:24</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+
+                                <div class="item-video">
+
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-15" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/01.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
+                                        </div>
+                                        <div class="item-video__duration">12:24</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+
+                                <div class="item-video">
+
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-16" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/02.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
+                                        </div>
+                                        <div class="item-video__duration">12:24</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+
+                                <div class="item-video">
+                                    <video loop poster="assets/images/preview-full.jpg" id="video-17" class="item-video__element video-js" preload="none" muted data-setup="{}">
+                                        <source src="assets/videos/03.webm">
+                                    </video>
+                                    <div class="item-video__info">
+                                        <div class="item-video__views">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#play"></use>
+                                            </svg>
+                                            <span>45К</span>
+                                        </div>
+                                        <div class="item-video__duration">12:24</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="base-loader">
+                            <div class="base-loader__item">
+                                <svg>
+                                    <use xlink:href="assets/images/icons/icons.svg#loader"></use>
+                                </svg>
+                            </div>
+                            <div class="base-loader__text">Loading...</div>
+                        </div>
+                    </div>
+                    <div data-tab-category="feed" data-tab-content="photos" class="feed__content">
+                        <div class="feed__items feed-items">
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
+                                    </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
+                                    </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
+                                    </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
+                                    </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
+                                    </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
+                                    </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
+                                    </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feed__item">
+                                <div class="image">
+                                    <div class="image__item">
+                                        <img src="assets/images/preview-full.jpg" alt="">
+                                    </div>
+                                    <div class="image__views stroke">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#image"></use>
+                                        </svg>
+                                        <span>45К</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="base-loader">
                             <div class="base-loader__item">
@@ -1403,238 +1767,74 @@
                         </div>
                     </div>
                 </div>
-                <div class="page__banner page__banner_home">
-                    <img src="assets/images/banner.jpg" alt="">
-                </div>
             </div>
 
         </main>
-        <div id="modal-report" class="modal lock-body">
-
-            <div class="modal__content">
-                <div class="modal__top">
-                    <div class="modal__title">
-                        <svg>
-                            <use xlink:href="assets/images/icons/icons.svg#warning-fill"></use>
-                        </svg>
-                        <span>Report</span>
-                    </div>
-                    <div data-modal-close="" class="modal__close">
-                        <svg>
-                            <use xlink:href="assets/images/icons/icons.svg#close"></use>
-                        </svg>
-                    </div>
-                </div>
-
-                <form action="#" class="modal-report">
-                    <label class="modal-report__checkbox checkbox">
-                        <input class="checkbox__input" type="checkbox">
-                        <span class="checkbox__text">
-                            <span>Underaged / People</span>
-                        </span>
-                    </label>
-                    <label class="modal-report__checkbox checkbox">
-                        <input class="checkbox__input" type="checkbox">
-                        <span class="checkbox__text">
-                            <span>Racist/offensive language/acts</span>
-                        </span>
-                    </label>
-                    <label class="modal-report__checkbox checkbox">
-                        <input class="checkbox__input" type="checkbox">
-                        <span class="checkbox__text">
-                            <span>Animals/acts of Bestiality</span>
-                        </span>
-                    </label>
-                    <label class="modal-report__checkbox checkbox">
-                        <div class="categories__niche niches-item">
-                            <div class="niches-item__top">
-                                <div class="niches-item__avatar">
-                                    <img src="assets/images/tags/user.jpg" alt="">
-                                </div>
-                                <div class="niches-item__info">
-                                    <div class="niches-item__name">Sour Mojito</div>
-                                    <div class="niches-item__value value">
-                                        <svg>
-                                            <use xlink:href="assets/images/icons/icons.svg#group"></use>
-                                        </svg>
-                                        <span>130K</span>
-                                    </div>
-                                </div>
-                                <a href="" class="niches-item__button button">
-                                    <span class="button__body">
-                                        <span>Follow</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="niches-item__photos">
-                                <div class="niches-item__photo">
-                                    <img src="assets/images/tags/01_niches.jpg" alt="">
-                                </div>
-                                <div class="niches-item__photo">
-                                    <img src="assets/images/tags/02_niches.jpg" alt="">
-                                </div>
-                                <div class="niches-item__photo">
-                                    <img src="assets/images/tags/03_niches.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="categories__niche niches-item">
-                            <div class="niches-item__top">
-                                <div class="niches-item__avatar">
-                                    <img src="assets/images/tags/user.jpg" alt="">
-                                </div>
-                                <div class="niches-item__info">
-                                    <div class="niches-item__name">Sour Mojito</div>
-                                    <div class="niches-item__value value">
-                                        <svg>
-                                            <use xlink:href="assets/images/icons/icons.svg#group"></use>
-                                        </svg>
-                                        <span>130K</span>
-                                    </div>
-                                </div>
-                                <a href="" class="niches-item__button button">
-                                    <span class="button__body">
-                                        <span>Follow</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="niches-item__photos">
-                                <div class="niches-item__photo">
-                                    <img src="assets/images/tags/01_niches.jpg" alt="">
-                                </div>
-                                <div class="niches-item__photo">
-                                    <img src="assets/images/tags/02_niches.jpg" alt="">
-                                </div>
-                                <div class="niches-item__photo">
-                                    <img src="assets/images/tags/03_niches.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <input class="checkbox__input" type="checkbox">
-                        <span class="checkbox__text">
-                            <span>Rape/Sexual assault</span>
-                        </span>
-                    </label>
-                    <label class="modal-report__checkbox checkbox">
-                        <input class="checkbox__input" type="checkbox">
-                        <span class="checkbox__text">
-                            <span>Violence/Death/Disturbing</span>
-                        </span>
-                    </label>
-                    <label class="modal-report__checkbox checkbox">
-                        <input class="checkbox__input" type="checkbox">
-                        <span class="checkbox__text">
-                            <span>Copyright / I own this content</span>
-                        </span>
-                    </label>
-                    <label class="modal-report__checkbox checkbox">
-                        <input class="checkbox__input" type="checkbox">
-                        <span class="checkbox__text">
-                            <span>I am in this GIF</span>
-                        </span>
-                    </label>
-                    <a href="" class="modal-report__button button">
-                        <span class="button__body">
-                            <span>Send report</span>
-                        </span>
-                    </a>
-                </form>
-            </div>
-        </div>
-        <div id="modal-share" class="modal lock-body">
-            <div class="modal__content">
-                <div class="modal__top">
-                    <div class="modal__title stroke">
-                        <svg>
-                            <use xlink:href="assets/images/icons/icons.svg#share"></use>
-                        </svg>
-                        <span>Share</span>
-                    </div>
-                    <div data-modal-close="" class="modal__close">
-                        <svg>
-                            <use xlink:href="assets/images/icons/icons.svg#close"></use>
-                        </svg>
-                    </div>
-                </div>
-                <div class="modal-share">
-                    <div class="modal-share__items">
-                        <div class="modal-share__item stroke">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#copy"></use>
-                            </svg>
-                            <span>Copy Link</span>
-                        </div>
-                        <div data-modal-link="modal-embed" class="modal-share__item stroke">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#link"></use>
-                            </svg>
-                            <span>Embed</span>
-                        </div>
-                    </div>
-                    <div class="modal-share__label label">Social share</div>
-                    <div class="modal-share__items">
-                        <div class="modal-share__item">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#reddit"></use>
-                            </svg>
-                            <span>Reddit</span>
-                        </div>
-                        <div class="modal-share__item">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#twitter"></use>
-                            </svg>
-                            <span>Twitter</span>
-                        </div>
-                        <div class="modal-share__item">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#discord"></use>
-                            </svg>
-                            <span>Discord</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="modal-embed" class="modal lock-body">
+        <div id="modal-create-collection" class="modal lock-body">
             <div class="modal__content modal__content_wide">
-                <div class="modal__top">
-                    <div class="modal__title stroke">
-                        <svg>
-                            <use xlink:href="assets/images/icons/icons.svg#link"></use>
-                        </svg>
-                        <span>Embed</span>
-                    </div>
-                    <div data-modal-close="" class="modal__close">
-                        <svg>
-                            <use xlink:href="assets/images/icons/icons.svg#close"></use>
-                        </svg>
-                    </div>
-                </div>
-                <div class="modal-embed">
-                    <div class="modal-embed__label label">Fixed frame</div>
-                    <div class="modal-embed__input">
-                        <input value="<iframe src=’https://www.234i3243hjk.com/frame432’>" readonly type="text" class="input">
-                        <div class="modal-embed__copy stroke">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#copy"></use>
-                            </svg>
+                <div class="saved-modal">
+                    <div class="saved-modal__title">Create a new collection</div>
+                    <div class="saved-modal__item">
+                        <label for="name" class="saved-modal__label label">Collection name</label>
+                        <div class="saved-modal__input">
+                            <input id="name" class="input" placeholder="Enter name" type="text">
                         </div>
                     </div>
-
-                    <div class="modal-embed__label label">Responsive frame</div>
-                    <div class="modal-embed__input">
-                        <input value="<iframe src=’https://www.234i3243hjk.com/frame432’>" readonly type="text" class="input">
-                        <div class="modal-embed__copy stroke">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#copy"></use>
-                            </svg>
+                    <div class="saved-modal__item">
+                        <label for="description" class="saved-modal__label label">Description</label>
+                        <div class="saved-modal__input">
+                            <textarea id="description" class="input" placeholder="Enter description"></textarea>
                         </div>
                     </div>
+                    <button type="button" class="saved-modal__button button">
+                        <span class="button__body">
+                            <span>Save</span>
+                        </span>
+                    </button>
+                    <button data-modal-close="" type="button" class="saved-modal__cancel primary-button">
+                        <span class="primary-button__body">
+                            <span>Cancel</span>
+                        </span>
+                    </button>
 
                 </div>
+
+            </div>
+        </div>
+        <div id="modal-edit-collection" class="modal lock-body">
+            <div class="modal__content modal__content_wide">
+                <div class="saved-modal">
+                    <div class="saved-modal__title">Edit collection</div>
+                    <div class="saved-modal__item">
+                        <label for="name-2" class="saved-modal__label label">Collection name</label>
+                        <div class="saved-modal__input">
+                            <input id="name-2" class="input" placeholder="Enter name" type="text">
+                        </div>
+                    </div>
+                    <div class="saved-modal__item">
+                        <label for="description-2" class="saved-modal__label label">Description</label>
+                        <div class="saved-modal__input">
+                            <textarea id="description-2" class="input" placeholder="Enter description"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="saved-modal__button button">
+                        <span class="button__body">
+                            <span>Save</span>
+                        </span>
+                    </button>
+                    <button data-modal-close="" type="button" class="saved-modal__cancel primary-button">
+                        <span class="primary-button__body">
+                            <span>Cancel</span>
+                        </span>
+                    </button>
+
+                </div>
+
             </div>
         </div>
     </div>
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js?_v=20240410034612"></script>
+    <script src="assets/js/pages/saved.js?_v=20240410034612"></script>
     <script src="assets/js/script.js?_v=20240410034612"></script>
     <script src="assets/js/app.js?_v=20240410034612"></script>
 </body>
